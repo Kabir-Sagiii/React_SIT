@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="./01_Card.css" />
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      function CreateCard(para) {
+        //para = {name:"----",image:"-------", x:10}
+        return (
+          <div id="card">
+            <img src={para.image} width="100%" height="230" />
+            <h2> {para.name} </h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia,
+              minus nulla?
+            </p>
+          </div>
+        );
+      }
+
+      function App() {
+        return (
+          <div id="container">
+            <CreateCard
+              x={10}
+              name={"Riya"}
+              image={
+                "https://img.freepik.com/premium-photo/professional-indian-female-headshots-business-corporate-women_203363-204.jpg?w=2000"
+              }
+            />
+
+            <CreateCard
+              name={"Sneha"}
+              image={
+                "https://static.vecteezy.com/system/resources/previews/025/474/309/large_2x/portrait-of-a-professional-woman-in-a-suit-business-woman-standing-in-an-office-ai-generated-photo.jpg"
+              }
+            />
+
+            <CreateCard
+              name={"Pari"}
+              image={
+                "https://images.squarespace-cdn.com/content/v1/572e050c4d088ea3a8f0ac9d/1572711304319-K2K7Y2PKAW0QVJLQGVW7/Atlanta-Professional-Headshots-1.jpg"
+              }
+            />
+
+            <CreateCard
+              name={"Sonam"}
+              image={
+                "https://img.freepik.com/premium-photo/professional-woman-corporate-setting_1256099-2381.jpg"
+              }
+            />
+          </div>
+        );
+      }
+
+      //   ReactDOM.render(CreateCard(), document.getElementById("root"));
+
+      ReactDOM.render(<App />, document.getElementById("root"));
+    </script>
+  </body>
+</html>

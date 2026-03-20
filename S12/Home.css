@@ -1,0 +1,140 @@
+body,
+h1 {
+  margin: 0;
+}
+#navbar {
+  width: 100%;
+  height: 80px;
+  background-color: black;
+  color: white;
+  display: grid;
+  grid-template-columns: 40% 40% 20%;
+}
+#title {
+}
+#title h1 {
+  font-size: 47px;
+  color: tomato;
+}
+#links {
+}
+#links a {
+  margin-right: 50px;
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+}
+#icons {
+}
+#icons i {
+  margin-right: 30px;
+  font-size: 29px;
+}
+#icons i:nth-child(1) {
+  color: green;
+}
+#icons i:nth-child(3) {
+  color: red;
+}
+.flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.main-container {
+  display: grid;
+
+  height: 500px;
+  grid-template-columns: 20% 80%;
+}
+.left-section {
+  box-shadow: 0 0 10px black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.left-section a {
+  color: green;
+  font-size: 21px;
+  text-decoration: none;
+}
+.right-sub-container {
+  height: 430px;
+  margin: 50px auto;
+  width: 80%;
+  display: grid;
+  grid-template-columns: 65% 35%;
+  gap: 5px;
+}
+.col-1 {
+  background-image:
+    linear-gradient(45deg, rgba(0, 0, 0, 0.7)),
+    url("https://static.vecteezy.com/system/resources/thumbnails/019/467/444/small_2x/adorable-little-girls-on-shopping-portrait-of-kids-with-shopping-bags-photo.jpg");
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+.col-1 h1 {
+  color: tomato;
+  font-size: 42px;
+}
+
+.col-2 {
+  display: grid;
+  grid-template-rows: 50% 50%;
+  gap: 5px;
+}
+.col-2 div:nth-child(1) {
+  background-image:
+    linear-gradient(45deg, rgba(0, 0, 0, 0.7)),
+    url("https://png.pngtree.com/thumb_back/fw800/background/20241203/pngtree-happy-kids-shopping-with-colorful-bags-in-a-mall-image_16141100.jpg");
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+.col-2 div:nth-child(1) h1,
+.col-2 div:nth-child(2) h1 {
+  color: coral;
+}
+.col-2 div:nth-child(2) {
+  background-image:
+    linear-gradient(45deg, rgba(0, 0, 0, 0.7)),
+    url("https://img.freepik.com/premium-photo/girl-shopping-portrait-gift-bags-from-birthday-party-event-celebration-with-present-studio-shop-sale-bag-little-child-with-presents-with-isolated-blue-background-with-kid_590464-160529.jpg");
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+.footer {
+  padding: 50px;
+  margin-top: 30px;
+  color: white;
+  background-color: black;
+  text-align: center;
+}
+.footer h1 {
+  color: coral;
+  font-size: 37px;
+  margin-bottom: 20px;
+}
+.footer-icons {
+  margin-top: 30px;
+}
+.footer-icons i {
+  font-size: 32px;
+  margin-right: 30px;
+  color: yellow;
+}

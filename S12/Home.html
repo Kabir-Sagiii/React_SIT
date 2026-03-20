@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+  <head>
+    <link rel="stylesheet" href="./Home.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      function Navbar() {
+        return (
+          <div id="navbar">
+            <div id="title" className="flexCenter">
+              <h1>Dude's - Mart</h1>
+            </div>
+            <div id="links" className="flexCenter">
+              <a href="">Home</a>
+              <a href="">Profile</a>
+              <a href="">Products</a>
+              <a href="">ContactUs</a>
+            </div>
+            <div id="icons" className="flexCenter">
+              <i class="bi bi-heart-fill"></i>
+              <i class="bi bi-cart-check-fill"></i>
+              <i class="bi bi-box-arrow-right"></i>
+            </div>
+          </div>
+        );
+      }
+
+      function Main() {
+        return (
+          <div className="main-container">
+            <div className="left-section">
+              <a href="">ALL</a>
+              <a href="">Electronics</a>
+              <a href="">Jewelery</a>
+              <a href="">Mens</a>
+              <a href="">Womens</a>
+              <a href="">Kids</a>
+              <a href="">Cosmetics</a>
+            </div>
+            <div className="right-section">
+              <div className="right-sub-container">
+                <div className="col-1">
+                  <h1>Little Kids T-Shirt</h1>
+                  <p>
+                    Soft breathable cotton shirt perfect for active playful kids
+                    everyday wear.Soft breathable cotton t-shirt designed for
+                    active kids. Lightweight fabric keeps children comfortable
+                    all day. Perfect for school, playtime, and casual outings
+                    with durable stitching and cheerful style.
+                  </p>
+                </div>
+                <div className="col-2">
+                  <div>
+                    <h1>Cozy Kids Hoodie</h1>
+                    <p>
+                      Warm lightweight hoodie ideal for school trips outdoor fun
+                      and cool evenings.
+                    </p>
+                  </div>
+                  <div>
+                    <h1>Rainbow Fun Kids</h1>
+                    <p>
+                      Bright colorful dress designed for comfort during sunny
+                      playful summer days.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      }
+
+      function Footer() {
+        return (
+          <div className="footer">
+            <h1>Developed using React With CSS</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea
+              perspiciatis quasi eum fugit, officiis ratione sequi itaque
+              asperiores quod quisquam autem, dolor pariatur inventore? Ex
+              itaque sapiente, quas provident error dignissimos accusantium a
+              ullam ab vero laudantium quisquam vitae reiciendis molestias ipsam
+              numquam alias possimus. At voluptatibus consequuntur, repudiandae
+              pariatur provident laudantium saepe debitis voluptate eveniet
+              suscipit. Minus eaque impedit omnis in, aliquid et iusto quasi
+              consequatur a nisi distinctio incidunt, consequuntur minima
+              laudantium, numquam odio fugiat expedita iste quod eius possimus?
+              Quidem commodi harum eveniet delectus accusamus dolor. Quae dicta
+              accusantium ducimus libero unde ipsa dolores nam. Quidem optio,
+              voluptas earum at exercitationem animi doloribus, est magnam sint
+              mollitia illo? Eveniet esse maxime accusantium quam libero ipsam,
+              recusandae, ducimus impedit eos rerum rem beatae nemo dolorem
+              architecto officia sequi!
+            </p>
+            <div className="footer-icons">
+              <i class="bi bi-instagram"></i>
+              <i class="bi bi-whatsapp"></i>
+              <i class="bi bi-twitter"></i>
+              <i class="bi bi-linkedin"></i>
+              <i class="bi bi-github"></i>
+            </div>
+          </div>
+        );
+      }
+
+      function App() {
+        return (
+          <div>
+            <Navbar />
+            <Main />
+            <Footer />
+          </div>
+        );
+      }
+
+      ReactDOM.render(<App />, document.getElementById("root"));
+    </script>
+  </body>
+</html>

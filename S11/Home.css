@@ -1,0 +1,82 @@
+body,
+h1 {
+  margin: 0;
+}
+#navbar {
+  width: 100%;
+  height: 80px;
+  background-color: black;
+  color: white;
+  display: grid;
+  grid-template-columns: 40% 40% 20%;
+}
+#title {
+}
+#title h1 {
+  font-size: 47px;
+  color: tomato;
+}
+#links {
+}
+#links a {
+  margin-right: 50px;
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+}
+#icons {
+}
+#icons i {
+  margin-right: 30px;
+  font-size: 29px;
+}
+#icons i:nth-child(1) {
+  color: green;
+}
+#icons i:nth-child(3) {
+  color: red;
+}
+.flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.main-container {
+  display: grid;
+
+  height: 500px;
+  grid-template-columns: 20% 80%;
+}
+.left-section {
+  box-shadow: 0 0 10px black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.left-section a {
+  color: green;
+  font-size: 21px;
+  text-decoration: none;
+}
+.right-sub-container {
+  height: 430px;
+  margin: 50px auto;
+  width: 80%;
+  display: grid;
+  grid-template-columns: 65% 35%;
+}
+.col-1 {
+  background-color: red;
+}
+.col-2 {
+  display: grid;
+  grid-template-rows: 50% 50%;
+}
+.col-2 div:nth-child(1) {
+  background-color: lightpink;
+}
+.col-2 div:nth-child(2) {
+  background-color: blue;
+}
