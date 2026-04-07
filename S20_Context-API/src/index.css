@@ -1,0 +1,13 @@
+.container {
+  padding: 20px;
+}
+#cards {
+  display: flex;
+  justify-content: space-evenly;
+}
+.card {
+  width: 250px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px black;
+}

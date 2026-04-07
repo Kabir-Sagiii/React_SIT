@@ -1,0 +1,8 @@
+.user-container {
+  margin: 50px auto;
+  width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-evenly;
+}

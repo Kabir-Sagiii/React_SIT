@@ -1,0 +1,14 @@
+Promise Concept
+===============
+url : 
+
+What is Promise
+Purpose of Promise
+How to store data in Promise
+resolve
+reject
+states of Promise
+
+How to access data from the Promise using then and catch
+
+1hr 20min

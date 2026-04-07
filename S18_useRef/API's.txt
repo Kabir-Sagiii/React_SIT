@@ -1,0 +1,3 @@
+Get All Products API
+=====================
+GET REQUEST TYPE : https://fakestoreapi.com/products
