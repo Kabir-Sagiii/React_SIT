@@ -1,0 +1,11 @@
+* {
+  font-family: "Times New Roman", Times, serif;
+}
+.bg-tomato {
+  background-color: tomato;
+}
+.btn-tomato {
+  background-color: tomato;
+  color: white;
+  font-weight: bold;
+}
