@@ -1,22 +1,15 @@
 import express from "express";
+import UserRoute from "./routes/userRoutes.js";
 
 const app = express();
 
+//to get request data access
+app.use(express.json());
+
+//to forward request to the route file
+app.use("/api/users", UserRoute);
+
+//creates http server and starts the http server on 7878
 app.listen(7878, () => {
   console.log("Http Server Started");
 });
-
-//endpoint
-app.get("/getData", (req, res) => {
-  res.send("<h1>Welcome to Backend Development with React JS as Frontend</h1>");
-});
-// http://localhost:7878/getData
-
-app.post("/login", function (req, res) {});
-// http://localhost:7878/login
-
-app.put("/updateuser", function (req, res) {});
-// http://localhost:7878/updateuser
-
-app.delete("/removeuser", function (req, res) {});
-// http://localhost:7878/removeuser
