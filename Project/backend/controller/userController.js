@@ -1,20 +1,40 @@
+import { insertData, getAllUsersData, checkUser } from "../model/userModel.js";
 export function signup(req, res) {
   //access the data from request
   const data = req.body;
 
-  //connect with Mongodb Server
+  //Insrtion Operation
+  insertData(data)
+    .then(() => {
+      res.send({ ok: true, message: "User Created Account Successfully" });
+    })
+    .catch(() => {
+      res.send({ ok: false, error: "Failed to Create Account" });
+    });
+}
 
-  //Connect with Database
-
-  //Connect with Collection (table)
-
-  //Insert the data in the Collection
-
-  //Based on the result send the Response
-
-  res.send("User is Registered....!!!!");
+export function signin(req, res) {
+  const data = req.body;
+  checkUser(data)
+    .then((user) => {
+      if (user) {
+        res.send({ ok: true, message: "valid user", user });
+      } else {
+        throw Error("Failed to Login,Check username or password");
+      }
+    })
+    .catch((error) => {
+      res.send({ ok: false, error: error.message });
+    });
 }
 
 export function getAllUsers(req, res) {
-  res.send("Getting all users data.....!!!");
+  getAllUsersData()
+    .then((users) => {
+      res.send({ ok: true, result: users });
+    })
+    .catch((error) => {
+      console.log(error);
+      res.send({ ok: false, error: error });
+    });
 }

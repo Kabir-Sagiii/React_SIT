@@ -1,9 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { createAccountService } from "./signupService";
 
 function Signup() {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -13,7 +14,7 @@ function Signup() {
     <div className="shadow w-25 text-center mx-auto my-5 p-3">
       <form
         onSubmit={handleSubmit((data) => {
-          createAccountService(data);
+          createAccountService(data, navigate);
         })}
       >
         <h2 className="text-primary fw-bold">Sign Up</h2>

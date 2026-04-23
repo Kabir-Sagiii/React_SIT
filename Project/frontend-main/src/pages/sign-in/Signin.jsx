@@ -1,9 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { signinService } from "./signinService";
 
 function Signin() {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -14,7 +15,7 @@ function Signin() {
     <div className="shadow w-25 text-center mx-auto my-5 p-3">
       <form
         onSubmit={handleSubmit((data) => {
-          signinService(data);
+          signinService(data, navigate);
         })}
       >
         <h2 className="text-primary fw-bold">Sign In</h2>
