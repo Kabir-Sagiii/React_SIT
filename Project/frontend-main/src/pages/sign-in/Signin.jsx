@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { signinService } from "./signinService";
 
-function Signin() {
+function Signin({ login }) {
   const navigate = useNavigate();
   const {
     register,
@@ -15,7 +15,7 @@ function Signin() {
     <div className="shadow w-25 text-center mx-auto my-5 p-3">
       <form
         onSubmit={handleSubmit((data) => {
-          signinService(data, navigate);
+          signinService(data, navigate, login);
         })}
       >
         <h2 className="text-primary fw-bold">Sign In</h2>

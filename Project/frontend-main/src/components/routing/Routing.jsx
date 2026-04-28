@@ -5,8 +5,9 @@ import Signup from "../../pages/sign-up/Signup";
 import InitialHome from "../../pages/initial-home/InitialHome";
 import ForgotPassword from "../../pages/forgot-password/ForgotPassword";
 import Home from "../../pages/home/Home.jsx";
+import Products from "../../pages/products/Products.jsx";
 
-function Routing() {
+function Routing({ login }) {
   const routes = [
     {
       path: "/",
@@ -17,8 +18,12 @@ function Routing() {
       component: <Home />,
     },
     {
+      path: "/products",
+      component: <Products />,
+    },
+    {
       path: "/sign-in",
-      component: <Signin />,
+      component: <Signin login={login} />,
     },
     { path: "/sign-up", component: <Signup /> },
     { path: "/forgot-password", component: <ForgotPassword /> },
