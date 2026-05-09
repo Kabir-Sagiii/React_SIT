@@ -3,13 +3,13 @@ import React from "react";
 function InitialHome() {
   return (
     <div>
-      <div className="container my-4">
+      <div className="container my-4 ">
         <img
-          src="https://img.freepik.com/premium-photo/elegant-cosmetic-products-background_718046-6222.jpg"
+          src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/effc67171119925.6469b0691df1a.jpg"
           width={"100%"}
           height={450}
           alt=""
-          className="rounded-5"
+          className="rounded-5 shadow"
         />
       </div>
 
@@ -83,10 +83,11 @@ function InitialHome() {
 
       <div className="container">
         <img
-          src="https://tse3.mm.bing.net/th/id/OIP.9ohdiFNZcnojUxrjoi8hlQHaEK?rs=1&pid=ImgDetMain&o=7&rm=3"
+          src="https://img.freepik.com/premium-psd/kids-fashion-sale-square-social-media-facebook-instagram-post-template-square-banner-design_797457-81.jpg?semt=ais_hybrid"
           width={"100%"}
-          height={270}
+          height={570}
           alt=""
+          className="shadow"
         />
       </div>
 

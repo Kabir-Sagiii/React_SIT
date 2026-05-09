@@ -24,10 +24,10 @@ function Navbar({ isLoggedIn, logout }) {
             </div>
             <div className="col-3 text-end  icons">
               <Link to="/cart">
-                <i class="bi bi-cart-check-fill"></i>
+                <i className="bi bi-cart-check-fill"></i>
               </Link>
               <Link to="/">
-                <i class="bi bi-power text-danger" onClick={logout}></i>
+                <i className="bi bi-power text-danger" onClick={logout}></i>
               </Link>
             </div>
           </div>

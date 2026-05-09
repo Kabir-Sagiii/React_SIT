@@ -1,0 +1,126 @@
+.contactus-page {
+  min-height: calc(100vh - 80px);
+  background: linear-gradient(180deg, #f8fbff 0%, #eef4ff 100%);
+}
+
+.contact-hero {
+  background: linear-gradient(135deg, #0d6efd 100%, #4f46e5 100%);
+  border-radius: 2rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.contact-hero::before,
+.contact-hero::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.35;
+}
+
+.contact-hero::before {
+  width: 260px;
+  height: 260px;
+  background: rgba(255, 255, 255, 0.18);
+  top: -60px;
+  right: -80px;
+}
+
+.contact-hero::after {
+  width: 220px;
+  height: 220px;
+  background: rgba(255, 255, 255, 0.12);
+  bottom: -60px;
+  left: -40px;
+}
+
+.eyebrow {
+  letter-spacing: 0.35em;
+  font-size: 0.8rem;
+}
+
+.contact-summary .icon-circle,
+.info-card .icon-circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+}
+
+.icon-circle {
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+}
+
+.contact-card {
+  border-radius: 2rem;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.contact-card .card-body {
+  position: relative;
+  z-index: 1;
+}
+
+.contact-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.82)
+  );
+  pointer-events: none;
+}
+
+.contact-form .form-control,
+.contact-form .form-select {
+  border-radius: 1rem;
+  background: #f8f9ff;
+  border: 1px solid rgba(13, 110, 253, 0.15);
+}
+
+.contact-form .form-floating > .form-control:focus,
+.contact-form .form-floating > .form-select:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.18);
+}
+
+.contact-form .form-floating label {
+  padding-left: 1.1rem;
+}
+
+.contact-form .form-floating .form-control,
+.contact-form .form-floating .form-select,
+.contact-form .form-floating textarea {
+  padding: 1.5rem 1rem 0.75rem;
+}
+
+.contact-details .info-card {
+  border-radius: 1.75rem;
+  background: #ffffff;
+}
+
+.info-card .card-body {
+  padding: 2rem;
+}
+
+.info-card .badge {
+  font-size: 0.8rem;
+}
+
+@media (max-width: 767.98px) {
+  .contact-hero {
+    border-radius: 1.5rem;
+  }
+  .contact-card,
+  .info-card {
+    border-radius: 1.5rem;
+  }
+}

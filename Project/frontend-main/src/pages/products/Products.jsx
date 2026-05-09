@@ -1,8 +1,17 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import "./Products.css";
 import ProductCategories from "../../components/products/categories/ProductCategories";
 import ProductCard from "../../components/products/product-card/ProductCard";
-function Products() {
+import { getAllCategories } from "./productsService";
+function Products({ loggedInUser }) {
+  const [categories, setCategoris] = useState([]);
+  const [products, setProducts] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState("");
+
+  useEffect(() => {
+    getAllCategories(setCategoris, setProducts);
+  }, []);
+
   return (
     <div>
       <section className="product-banner">
@@ -16,18 +25,16 @@ function Products() {
       </section>
 
       <section className="product-categories">
-        <ProductCategories />
+        <ProductCategories categories={categories} setProducts={setProducts} />
       </section>
 
       <section className="d-flex flex-wrap my-5 justify-content-evenly gap-3">
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
+        {products.length > 0 &&
+          products.map((product) => {
+            return (
+              <ProductCard loggedInUser={loggedInUser} product={product} />
+            );
+          })}
       </section>
     </div>
   );

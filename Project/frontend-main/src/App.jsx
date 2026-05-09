@@ -4,6 +4,7 @@ import Navbar from "./components/nav-bar/Navbar";
 import { ToastContainer } from "react-toastify";
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [loggedInUser, setLoggedInUser] = useState(null);
 
   const login = () => {
     setIsLoggedIn(true);
@@ -17,7 +18,13 @@ function App() {
     <div>
       <Navbar isLoggedIn={isLoggedIn} logout={logout} />
 
-      <Routing login={login} />
+      <Routing
+        login={login}
+        loggedInUser={loggedInUser}
+        setLoggedInUser={setLoggedInUser}
+        isLoggedIn={isLoggedIn}
+        logout={logout}
+      />
       <ToastContainer />
     </div>
   );

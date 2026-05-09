@@ -1,15 +1,20 @@
-import React from "react";
 import ProductCategory from "./ProductCategory";
-function ProductCategories() {
+import { toast } from "react-toastify";
+
+function ProductCategories({ categories, setProducts }) {
   return (
     <div className="d-flex justify-content-evenly align-items-center">
-      <ProductCategory image={""} title={"All"} />
-      <ProductCategory image={""} title={"Electronics"} />
-      <ProductCategory image={""} title={"Mens"} />
-      <ProductCategory image={""} title={"Womens"} />
-      <ProductCategory image={""} title={"Kids"} />
-      <ProductCategory image={""} title={"Furniture"} />
-      <ProductCategory image={""} title={"Cosmetics"} />
+      {categories.length > 0 &&
+        categories.map(({ _id, image, title }) => {
+          return (
+            <ProductCategory
+              setProducts={setProducts}
+              key={_id}
+              image={image}
+              title={title}
+            />
+          );
+        })}
     </div>
   );
 }

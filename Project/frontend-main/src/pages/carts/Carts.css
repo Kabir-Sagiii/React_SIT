@@ -1,0 +1,15 @@
+.carts-containers {
+  width: 95%;
+  height: 85vh;
+
+  margin: auto;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  gap: 11px;
+}
+.cart-data {
+}
+.cart-summary {
+  height: 300px;
+  background-color: black;
+}
