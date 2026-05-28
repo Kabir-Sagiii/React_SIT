@@ -1,5 +1,8 @@
 import { toast } from "react-toastify";
 import axios from "axios";
+import cartsActionCreator from "../../actions/cartsAction";
+import store from "../../store/store";
+
 export function getAllCarts(setCarts, id) {
   axios
     .get("http://localhost:7878/api/carts/cart", {
@@ -8,6 +11,7 @@ export function getAllCarts(setCarts, id) {
       },
     })
     .then((res) => {
+      store.dispatch(cartsActionCreator(res.data.result));
       setCarts(res.data.result);
     })
     .catch(() => {

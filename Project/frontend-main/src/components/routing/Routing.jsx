@@ -13,6 +13,7 @@ import Orders from "../orders/Orders";
 import Favourites from "../favourites/Favourites";
 import Contactus from "../../pages/contactus/Contactus";
 import Carts from "../../pages/carts/Carts.jsx";
+import OrderSummary from "../../pages/order-summary/OrderSummary.jsx";
 
 function Routing({ login, isLoggedIn, logout, setLoggedInUser, loggedInUser }) {
   const routes = [
@@ -23,6 +24,10 @@ function Routing({ login, isLoggedIn, logout, setLoggedInUser, loggedInUser }) {
     {
       path: "/home",
       component: isLoggedIn ? <InitialHome /> : <Navigate to="/" />,
+    },
+    {
+      path: "/order-summary",
+      component: isLoggedIn ? <OrderSummary /> : <Navigate to="/" />,
     },
     {
       path: "/products",

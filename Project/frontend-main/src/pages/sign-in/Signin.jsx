@@ -2,9 +2,11 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { signinService } from "./signinService";
+import { useDispatch } from "react-redux";
 
 function Signin({ login, setLoggedInUser }) {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const {
     register,
     handleSubmit,
@@ -15,7 +17,7 @@ function Signin({ login, setLoggedInUser }) {
     <div className="shadow w-25 text-center mx-auto my-5 p-3">
       <form
         onSubmit={handleSubmit((data) => {
-          signinService(data, navigate, login, setLoggedInUser);
+          signinService(data, navigate, login, setLoggedInUser, dispatch);
         })}
       >
         <h2 className="text-primary fw-bold">Sign In</h2>

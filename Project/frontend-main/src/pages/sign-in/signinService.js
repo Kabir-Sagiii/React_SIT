@@ -1,15 +1,22 @@
 import axios from "axios";
 import { toast } from "react-toastify";
+import userActionCreator from "../../actions/userAction";
 const signin_api = "http://localhost:7878/api/users/sign-in";
 
-export function signinService(data, navigate, login, setLoggedInUser) {
+export function signinService(
+  data,
+  navigate,
+  login,
+  setLoggedInUser,
+  dispatch,
+) {
   axios
     .post(signin_api, data)
     .then((res) => {
       if (res.data.ok) {
-        console.log("login", res.data);
         toast.success("User LoggedIn", { autoClose: 1000 });
         login();
+        dispatch(userActionCreator(res.data.user));
         setLoggedInUser(res.data.user);
 
         navigate("/home");

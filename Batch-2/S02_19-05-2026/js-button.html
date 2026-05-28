@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+  <head></head>
+
+  <body>
+    <script>
+      function createUI() {
+        var btn = document.createElement("button");
+        btn.innerText = "Javascript button";
+        btn.onclick = function () {
+          const img = document.createElement("img");
+          img.src =
+            "https://static.cdninstagram.com/rsrc.php/yJ/r/53X3pk-t2Gn.webp";
+          img.width = "200";
+          img.height = "200";
+          document.querySelector("body").appendChild(img);
+        };
+        document.querySelector("body").appendChild(btn);
+
+        var ol = document.createElement("ol");
+        var li1 = document.createElement("li");
+        var li2 = document.createElement("li");
+        li1.innerText = "HTML";
+        li2.innerText = "JS";
+
+        ol.appendChild(li1);
+        ol.appendChild(li2);
+
+        document.querySelector("body").appendChild(ol);
+      }
+
+      createUI();
+      createUI();
+      createUI();
+      createUI();
+      createUI();
+    </script>
+  </body>
+</html>

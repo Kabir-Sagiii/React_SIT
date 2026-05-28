@@ -1,13 +1,28 @@
 import { useState, useEffect } from "react";
 import "./Carts.css";
+import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import { getAllCarts, removeProductFromCart } from "./cartsService";
 function Carts({ loggedInUser }) {
+  const dispatch = useDispatch();
+  var subtotal = 0;
   const [carts, setCarts] = useState([]);
-  const [count, setCount] = useState(1);
 
   useEffect(() => {
     getAllCarts(setCarts, loggedInUser._id);
   }, []);
+
+  const checkout = () => {
+    dispatch({
+      type: "amount",
+      payload:
+        (carts.length > 0 &&
+          carts.reduce((subtotal, cart) => {
+            return subtotal + cart.price;
+          }, subtotal)) -
+        5 * 94,
+    });
+  };
 
   return (
     <div className="carts-containers">
@@ -39,24 +54,13 @@ function Carts({ loggedInUser }) {
                       />
                     </td>
                     <td>{cart.name}</td>
-                    <td>{cart.price}</td>
+                    <td>${cart.price}</td>
                     <td>
-                      <button
-                        disabled={count === 1}
-                        className="bg-primary  text-white border-0"
-                        onClick={() => {
-                          setCount(count - 1);
-                        }}
-                      >
+                      <button className="bg-primary  text-white border-0">
                         <i class="bi bi-dash "></i>
                       </button>
-                      <span className="text-primary mx-2">{count}</span>
-                      <button
-                        onClick={() => {
-                          setCount(count + 1);
-                        }}
-                        className=" bg-primary border-0 text-white"
-                      >
+                      <span className="text-primary mx-2">1</span>
+                      <button className=" bg-primary border-0 text-white">
                         <i class="bi bi-plus-lg"></i>
                       </button>
                     </td>
@@ -82,7 +86,60 @@ function Carts({ loggedInUser }) {
           </tbody>
         </table>
       </div>
-      <div className="cart-summary mt-3">s</div>
+      <div className="cart-summary ">
+        <div className=" mt-3">
+          <div className="row mt-3">
+            <h3 className="text-success text-center">Cart Summary</h3>
+            <hr />
+          </div>
+          <div className="row text-center">
+            <div className="col-8">
+              <h5 className="text-success">Sub Total</h5>
+            </div>
+            <div className="col-4">
+              <p>
+                ${" "}
+                {carts.length > 0 &&
+                  carts.reduce((subtotal, cart) => {
+                    return subtotal + cart.price;
+                  }, subtotal)}
+              </p>
+            </div>
+            <hr />
+          </div>
+          <div className="row text-center">
+            <div className="col-8">
+              <h5 className="text-success">Discount</h5>
+            </div>
+            <div className="col-4">
+              <p>$ 5</p>
+            </div>
+            <hr />
+          </div>
+          <div className="row text-center">
+            <div className="col-8">
+              <h5 className="text-success fw-bold"> Total Amount</h5>
+            </div>
+            <div className="col-4">
+              <p className="fw-bold">
+                $
+                {(carts.length > 0 &&
+                  carts.reduce((subtotal, cart) => {
+                    return subtotal + cart.price;
+                  }, subtotal)) -
+                  5 * 94}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="text-center">
+          <Link to="/order-summary">
+            <button className="btn w-75 btn-success p-2" onClick={checkout}>
+              Proceed for Checkout
+            </button>
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }
